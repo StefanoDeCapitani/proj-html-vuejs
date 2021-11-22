@@ -24,37 +24,90 @@ $border-radius-small: 0.29rem;
 
 $box-shadow: 0px 24px 32px -6px rgb(0 0 0 / 10%);
 
-@mixin custom-btn($clr, $bg-clr, $hover-bg-clr: transparent, $border: none) {
+$transition: all 0.5s ease;
+
+.text-xxxl {
+  font-size: $fs-xxxl;
+}
+.text-xxl {
+  font-size: $fs-xxl;
+}
+.text-xl {
+  font-size: $fs-xl;
+}
+.text-l {
+  font-size: $fs-l;
+}
+.text-m {
+  font-size: $fs-m;
+}
+.text-s {
+  font-size: $fs-s;
+}
+.text-xs {
+  font-size: $fs-xs;
+}
+.text-xxs {
+  font-size: $fs-xxs;
+}
+.text-xxxs {
+  font-size: $fs-xxxs;
+}
+
+@mixin flex($direction, $gap, $align: flex-start, $justify: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+.btn {
+  border: none;
+}
+@mixin custom-btn($clr, $bg-clr, $hover-bg-clr: $clr-primary-dark) {
   padding: $btn-padding;
   color: $clr;
 
   background-color: $bg-clr;
-
-  border: $border;
   border-radius: $border-radius;
+
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: $transition;
 
   &:hover {
     background-color: $hover-bg-clr;
+    color: $text-light;
   }
 }
 
 .btn--primary {
-  @include custom-btn($text-light, $clr-primary, $clr-primary-dark);
+  @include custom-btn($text-light, $clr-primary);
 }
 
 .btn--primary-light {
-  @include custom-btn($text-light, $clr-primary-light, $clr-primary-dark);
+  @include custom-btn($clr-primary, $clr-primary-light);
 }
 
 .btn--white {
-  @include custom-btn($text-dark, $clr-light, 1px solid $clr-dark);
+  @include custom-btn($text-dark, $clr-light, transparent);
+  position: relative;
+  box-shadow: 0px 0px 0px 2px white inset;
 }
 
 @mixin custom-section($title-fs, $text-fs) {
-  *:first-child {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: $title-fs;
+    text-transform: capitalize;
   }
-  *:last-child {
+  p {
     font-size: $text-fs;
   }
 }
@@ -77,16 +130,29 @@ $box-shadow: 0px 24px 32px -6px rgb(0 0 0 / 10%);
 
 @mixin custom-col($num-of-col, $gap) {
   .col {
-    width: calc(100% / $num-of-col - $gap / 2);
+    width: calc(100% / $num-of-col - $gap);
     margin: 0 calc($gap / 2);
   }
 }
 
 .container {
   $gap: 1rem;
-  max-width: 1400px;
-  margin-left: calc($gap / 2);
-  margin-right: calc($gap / 2);
+  max-width: 1200px;
+  margin: auto;
+
+  .row-col-1 {
+    width: 100%;
+  }
+
+  .row-cols-2,
+  .row-cols-3,
+  .row-cols-4,
+  .row-cols-6 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc($gap / 2 * -1);
+    margin-right: calc($gap / 2 * -1);
+  }
 
   .row-cols-2 {
     @include custom-col(2, $gap);
