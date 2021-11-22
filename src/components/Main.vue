@@ -1,11 +1,18 @@
 <template>
-  <main></main>
+  <main>
+    <Hero />
+  </main>
 </template>
 
 <script>
+import Hero from "./Hero.vue";
+
 export default {
   name: "Main",
+  components: {
+    Hero,
+  },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>
