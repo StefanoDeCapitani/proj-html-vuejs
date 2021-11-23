@@ -43,7 +43,7 @@ export default {
   background-size: cover;
   background-position: left;
   color: white;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
   .hero__section {
     @include flex(column, 1rem);
     padding: 120px 3rem 0;
