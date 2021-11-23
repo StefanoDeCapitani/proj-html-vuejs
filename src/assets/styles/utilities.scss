@@ -3,10 +3,11 @@ $clr-primary-light: hsl(21, 100%, 93%);
 $clr-primary-dark: hsl(21, 91%, 48%);
 $clr-dark: black;
 $clr-light: white;
+$clr-secondary: grey;
 
-$clr-yellow: hsl(51, 85%, 59%);
-$clr-green: hsl(97, 79%, 55%);
-$clr-blue: hsl(231, 71%, 46%);
+$clr-warning: hsl(51, 85%, 59%);
+$clr-success: hsl(97, 79%, 55%);
+$clr-info: hsl(231, 71%, 46%);
 
 $text-dark: black;
 $text-light: white;
@@ -32,13 +33,13 @@ $box-shadow: 0px 24px 32px -6px rgb(0 0 0 / 10%);
 $transition: all 0.5s ease;
 
 .bg-info {
-  background-color: $clr-blue;
+  background-color: $clr-info;
 }
 .bg-warning {
-  background-color: $clr-yellow;
+  background-color: $clr-warning;
 }
 .bg-success {
-  background-color: $clr-green;
+  background-color: $clr-success;
 }
 
 .text-xxxl {
@@ -111,6 +112,14 @@ $transition: all 0.5s ease;
 
 .btn--primary-light {
   @include custom-btn($clr-primary, $clr-primary-light);
+  .phone-icon {
+    transition: $transition;
+  }
+  &:hover {
+    .phone-icon {
+      color: $clr-light;
+    }
+  }
 }
 
 .btn--white {
@@ -174,6 +183,10 @@ $transition: all 0.5s ease;
   .row-cols-6 {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .row-cols-3 {
+    $gap: 2.5rem;
     margin-left: calc($gap / 2 * -1);
     margin-right: calc($gap / 2 * -1);
   }

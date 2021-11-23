@@ -38,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/styles/utilities";
 .container {
-  padding: $container-padding 0;
+  padding: $container-padding 0 0;
   .section-heading {
     padding-bottom: 30px;
   }

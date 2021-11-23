@@ -3,6 +3,7 @@
     <Hero />
     <ThreeStepsSection />
     <Brands />
+    <CallCard />
     <CaseStudies />
   </main>
 </template>
@@ -12,6 +13,7 @@ import Hero from "./Hero.vue";
 import ThreeStepsSection from "./ThreeStepsSection.vue";
 import Brands from "./Brands.vue";
 import CaseStudies from "./CaseStudies.vue";
+import CallCard from "./CallCard.vue";
 
 export default {
   name: "Main",
@@ -19,6 +21,7 @@ export default {
     Hero,
     ThreeStepsSection,
     Brands,
+    CallCard,
     CaseStudies,
   },
 };
