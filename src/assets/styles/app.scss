@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 *,
 *::before,
 *::after {
@@ -20,4 +22,146 @@ body {
 
 .li {
   list-style: none;
+}
+
+.bg-info {
+  background-color: $clr-info;
+}
+.bg-warning {
+  background-color: $clr-warning;
+}
+.bg-success {
+  background-color: $clr-success;
+}
+.bg-secondary {
+  background-color: $clr-secondary-light;
+}
+
+.text-xxxl {
+  font-size: $fs-xxxl;
+  font-weight: bold;
+}
+.text-xxl {
+  font-size: $fs-xxl;
+  font-weight: bold;
+}
+.text-xl {
+  font-size: $fs-xl;
+  font-weight: bold;
+}
+.text-l {
+  font-size: $fs-l;
+  font-weight: bold;
+}
+.text-m {
+  font-size: $fs-m;
+}
+.text-s {
+  font-size: $fs-s;
+}
+.text-xs {
+  font-size: $fs-xs;
+}
+.text-xxs {
+  font-size: $fs-xxs;
+}
+.text-xxxs {
+  font-size: $fs-xxxs;
+}
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+}
+
+.btn--primary {
+  @include custom-btn($text-light, $clr-primary);
+}
+
+.btn--primary-light {
+  @include custom-btn($clr-primary, $clr-primary-light);
+  .phone-icon {
+    transition: $transition;
+  }
+  &:hover {
+    .phone-icon {
+      color: $clr-light;
+    }
+  }
+}
+
+.btn--white {
+  @include custom-btn($text-dark, $clr-light, transparent);
+  position: relative;
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+.section-xl {
+  @include custom-section($fs-xxxl, $fs-l);
+}
+
+.section-l {
+  @include custom-section($fs-xxl, $fs-m);
+}
+
+.section-m {
+  @include custom-section($fs-xl, $fs-s);
+}
+
+.section-s {
+  @include custom-section($fs-m, $fs-s);
+}
+
+.container {
+  $gap: 1rem;
+  max-width: 1200px;
+  margin: auto;
+  .row-col-1 {
+    width: 100%;
+  }
+
+  .row-cols-2,
+  .row-cols-3,
+  .row-cols-4,
+  .row-cols-6 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row-cols-3 {
+    $gap: 2.5rem;
+    margin-left: calc($gap / 2 * -1);
+    margin-right: calc($gap / 2 * -1);
+  }
+
+  .row-cols-2 {
+    @include custom-col(2, $gap);
+  }
+
+  .row-cols-3 {
+    @include custom-col(3, $gap);
+  }
+
+  .row-cols-4 {
+    @include custom-col(4, $gap);
+  }
+
+  .row-cols-6 {
+    @include custom-col(6, $gap);
+  }
+}
+
+.row {
+  @include flex(row, 0, center, center);
+  .col-4_6 {
+    width: calc(100% / 6 * 4);
+  }
+  .col-5_6 {
+    width: calc(100% / 6 * 5);
+  }
+  .col-1_2 {
+    width: calc(100 / 2);
+  }
 }

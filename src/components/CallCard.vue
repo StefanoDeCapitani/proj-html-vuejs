@@ -33,9 +33,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/utilities";
+@import "../assets/styles/variables";
 .container {
-  padding: $container-padding 0;
+  padding-top: $container-padding;
+  padding-bottom: $container-padding;
   .card {
     @include flex(row, 1rem, center, space-between);
     background-color: white;

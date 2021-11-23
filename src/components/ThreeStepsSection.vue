@@ -14,12 +14,12 @@
           </div>
           <section class="section section-xxl">
             <h3 class="text-xxl">Increase Brand Awareness</h3>
-            <p>
+            <p class="text-s">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               auctor placerat luctus. Nullam sit amet ante sed orci convallis
               gravida et at massa.
             </p>
-            <button class="btn btn--primary">Get a Consultation</button>
+            <a href="#" class="a btn--primary">Get a Consultation</a>
           </section>
         </div>
       </div>
@@ -38,12 +38,12 @@
           </div>
           <section class="section section-xxl">
             <h3 class="text-xxl">In-House Sales Training</h3>
-            <p>
+            <p class="text-s">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               auctor placerat luctus. Nullam sit amet ante sed orci convallis
               gravida et at massa.
             </p>
-            <button class="btn btn--primary">Get a Consultation</button>
+            <a href="#" class="a btn--primary">Get a Consultation</a>
           </section>
         </div>
       </div>
@@ -62,12 +62,12 @@
           </div>
           <section class="section section-xxl">
             <h3 class="text-xxl">Harness Your Social Proof</h3>
-            <p>
+            <p class="text-s">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               auctor placerat luctus. Nullam sit amet ante sed orci convallis
               gravida et at massa.
             </p>
-            <button class="btn btn--primary">Get a Consultation</button>
+            <a href="#" class="a btn--primary">Get a Consultation</a>
           </section>
         </div>
       </div>
@@ -87,10 +87,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/utilities";
+@import "../assets/styles/variables";
 
 .container {
-  padding: $container-padding 0;
+  padding-top: $container-padding;
+  padding-bottom: $container-padding;
   .flip-content {
     .section-image {
       order: 1;

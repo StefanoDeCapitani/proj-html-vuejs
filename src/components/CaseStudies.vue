@@ -6,61 +6,61 @@
     <div class="case-studies">
       <div class="row-cols-3">
         <div class="col">
-          <ArcticleCard
+          <ArticleCard
             imgSrc="../assets/img/case-studies-1.jpg"
             imgAlt="Case Study 1"
-            arcticleHref="#"
+            articleHref="#"
           >
             How Spaces attracted five million visitors by improving the content
-          </ArcticleCard>
+          </ArticleCard>
           <p class="text-xxl numbers">200%</p>
           <p>Higher revenue from digital</p>
         </div>
         <div class="col">
-          <ArcticleCard
+          <ArticleCard
             imgSrc="../assets/img/case-studies-4.jpg"
             imgAlt="Case Study 2"
-            arcticleHref="#"
+            articleHref="#"
           >
             Creativity helped Hemisferio to increase their brand reach
             vertically
-          </ArcticleCard>
+          </ArticleCard>
           <p class="text-xxl numbers">10x</p>
           <p>Sales increase with the same ad spend</p>
         </div>
         <div class="col">
-          <ArcticleCard
+          <ArticleCard
             imgSrc="../assets/img/case-studies-6.jpg"
             imgAlt="Case Study 3"
-            arcticleHref="#"
+            articleHref="#"
           >
             How DigitalBox used AI-powered data insight to boost sales
-          </ArcticleCard>
+          </ArticleCard>
           <p class="text-xxl numbers">3-year</p>
           <p>Partnership with Avada Consultant</p>
         </div>
       </div>
     </div>
     <div class="text-center">
-      <button class="btn btn--primary btn--read-more">
+      <a href="#" class="a btn--primary btn--read-more">
         Read More Case Studies
-      </button>
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-import ArcticleCard from "./ArcticleCard.vue";
+import ArticleCard from "./ArticleCard.vue";
 export default {
   name: "CaseStudies",
   components: {
-    ArcticleCard,
+    ArticleCard,
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import "../assets/styles/utilities";
+@import "../assets/styles/variables";
 
 .container {
   padding-bottom: $container-padding;
@@ -70,10 +70,12 @@ export default {
   .case-studies {
     padding-bottom: 50px;
     .numbers {
-      padding-bottom: 1.2rem;
+      border-top: 1px solid $clr-secondary-light;
+      padding: 28px 0 15px;
     }
   }
   .btn--read-more {
+    font-size: $fs-xs;
     margin: 28px 0;
   }
 }

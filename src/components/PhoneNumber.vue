@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/utilities";
+@import "../assets/styles/variables";
 
 .phone-icon {
   color: $clr-primary;

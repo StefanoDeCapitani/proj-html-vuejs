@@ -56,7 +56,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/utilities";
+@import "../assets/styles/variables";
+
 .card {
   @include flex(column, 1rem, center);
   background-color: white;
@@ -103,10 +104,11 @@ export default {
         }
       }
       .form__input {
+        height: 58px;
         width: 100%;
         color: inherit;
         border: none;
-        box-shadow: 0 0 0 1px rgb(230, 230, 230) inset;
+        box-shadow: 0 0 0 1px $clr-secondary-light inset;
         background: white;
         border-radius: $border-radius-small;
         transition: $transition;
