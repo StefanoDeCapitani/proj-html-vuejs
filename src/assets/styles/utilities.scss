@@ -28,15 +28,19 @@ $transition: all 0.5s ease;
 
 .text-xxxl {
   font-size: $fs-xxxl;
+  font-weight: bold;
 }
 .text-xxl {
   font-size: $fs-xxl;
+  font-weight: bold;
 }
 .text-xl {
   font-size: $fs-xl;
+  font-weight: bold;
 }
 .text-l {
   font-size: $fs-l;
+  font-weight: bold;
 }
 .text-m {
   font-size: $fs-m;
@@ -132,6 +136,9 @@ $transition: all 0.5s ease;
   .col {
     width: calc(100% / $num-of-col - $gap);
     margin: 0 calc($gap / 2);
+    img {
+      max-width: 100%;
+    }
   }
 }
 
