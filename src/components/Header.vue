@@ -52,22 +52,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav {
-  display: flex;
-  align-items: center;
-  padding: 1.64rem 1.41rem 1.41rem;
-  .nav__logo {
-    margin-right: auto;
-  }
-  .nav__ul {
+@import "../assets/styles/utilities";
+
+.header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $clr-light;
+  .nav {
     display: flex;
-    gap: 2rem;
-    & > * {
-      padding: 0 0.5rem;
+    align-items: center;
+    padding: 1.64rem 1.41rem 1.41rem;
+    .nav__logo {
+      margin-right: auto;
     }
-  }
-  .nav__call-to-action {
-    margin-left: 2rem;
+    .nav__ul {
+      display: flex;
+      gap: 2rem;
+      & > * {
+        padding: 0 0.5rem;
+      }
+    }
+    .nav__call-to-action {
+      margin-left: 2rem;
+    }
   }
 }
 </style>

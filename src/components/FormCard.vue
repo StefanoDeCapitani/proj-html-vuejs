@@ -16,6 +16,7 @@
           type="text"
           placeholder="Your Name*"
           class="form__input form__input--name text-s"
+          required
         />
       </div>
       <div class="form__input-container">
@@ -23,6 +24,7 @@
           type="email"
           placeholder="Your Email*"
           class="form__input text-s"
+          required
         />
       </div>
       <div class="form__input-container">
@@ -30,6 +32,7 @@
           type="tel"
           placeholder="Your Phone Number*"
           class="form__input text-s"
+          required
         />
       </div>
       <button class="btn btn--primary btn--call-to-action">
