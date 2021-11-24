@@ -41,16 +41,28 @@ export default {
 .hero {
   background-image: url("../assets/img/marketing-intro.jpg");
   background-size: cover;
-  background-position: left;
+  background-position: center;
   color: white;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  backdrop-filter: brightness(0.5);
+
   .hero__section {
-    @include flex(column, 1rem);
-    padding: 120px 3rem 0;
+    @include flex(column, 42px);
+    padding: 110px 3rem 0;
     margin: auto;
     .icon {
       font-size: 0.8rem;
     }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+  }
+  .card {
+    transform: translateY(10%);
   }
 }
 </style>

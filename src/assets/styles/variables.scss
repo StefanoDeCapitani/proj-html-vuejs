@@ -9,6 +9,9 @@ $clr-secondary-light: rgb(230, 230, 230);
 $clr-warning: hsl(51, 85%, 59%);
 $clr-success: hsl(97, 79%, 55%);
 $clr-info: hsl(231, 71%, 46%);
+$clr-warning-light: hsl(51, 85%, 59%, 0.4);
+$clr-success-light: hsl(97, 79%, 55%, 0.1);
+$clr-info-light: hsl(231, 71%, 46%, 0.1);
 
 $text-dark: black;
 $text-light: white;
@@ -25,7 +28,7 @@ $fs-xxxs: 0.76rem;
 
 $btn-padding: 22px 40px;
 $container-padding: 100px;
-$container-padding-medium: 130px;
+$container-padding-medium: 110px;
 $container-padding-big: 130px;
 
 $border-radius: 0.7rem;
@@ -33,7 +36,7 @@ $border-radius-small: 0.29rem;
 
 $box-shadow: 0px 24px 32px -6px rgb(0 0 0 / 10%);
 
-$transition: all 0.5s ease;
+$transition: all 0.4s ease;
 
 @mixin flex($direction, $gap, $align: flex-start, $justify: flex-start) {
   display: flex;

@@ -8,25 +8,15 @@
           alt="Avada Marketing logo"
         />
         <ul class="nav__ul">
-          <li class="li nav__li">
-            <NavLink>Home</NavLink>
+          <li class="li nav__li" v-for="(link, i) in navLinks" :key="i">
+            <NavLink
+              :class="{ active: isActive(i) }"
+              :dropDownMenu="link.dropDownMenu"
+              :linkHref="link.href"
+              >{{ link.title }}</NavLink
+            >
           </li>
-          <li class="li nav__li">
-            <NavLink>Home</NavLink>
-          </li>
-          <li class="li nav__li">
-            <NavLink>Home</NavLink>
-          </li>
-          <li class="li nav__li">
-            <NavLink>Home</NavLink>
-          </li>
-          <li class="li nav__li">
-            <NavLink>Home</NavLink>
-          </li>
-          <li class="li nav__li">
-            <NavLink>Home</NavLink>
-          </li>
-          <li class="li nav__li">
+          <li class="li nav__li phone-number">
             <PhoneNumber>(555) 802-1234</PhoneNumber>
           </li>
         </ul>
@@ -48,6 +38,54 @@ export default {
     NavLink,
     PhoneNumber,
   },
+  data() {
+    return {
+      navLinks: [
+        {
+          title: "Home",
+          dropDownMenu: [{ title: "Home Alternate" }],
+          href: "#",
+        },
+        {
+          title: "Services",
+          dropDownMenu: [
+            {
+              icon: { name: ["far", "lightbulb"], class: "bg-info--light" },
+              title: "Strategic Marketing Plan",
+              description:
+                "Maecenas ut erat malesuada tortor mattis scelerisque eu ut tortor",
+            },
+            {
+              icon: {
+                name: ["fas", "parachute-box"],
+                class: "bg-warning--light",
+              },
+              title: "Sales Development",
+              description:
+                "Maecenas ut erat malesuada tortor mattis scelerisque eu ut tortor",
+            },
+            {
+              icon: { name: ["fas", "seedling"], class: "bg-success--light" },
+              title: "Digital Marketing",
+              description:
+                "Maecenas ut erat malesuada tortor mattis scelerisque eu ut tortor",
+            },
+          ],
+          href: "#",
+        },
+        { title: "Why Us", href: "#" },
+        { title: "Case Studies", href: "#" },
+        { title: "About", href: "#" },
+        { title: "Blog", href: "#" },
+      ],
+      activeLink: 0,
+    };
+  },
+  methods: {
+    isActive(i) {
+      return i === this.activeLink;
+    },
+  },
 };
 </script>
 
@@ -62,21 +100,19 @@ export default {
   width: 100%;
   background: $clr-light;
   .nav {
-    display: flex;
-    align-items: center;
+    @include flex(row, 0, center, space-between);
     padding: 1.64rem 1.41rem 1.41rem;
     .nav__logo {
-      margin-right: auto;
+      margin-right: 1rem;
     }
     .nav__ul {
       display: flex;
-      gap: 2rem;
-      & > * {
-        padding: 0 0.5rem;
+      .nav__li {
+        padding: 0 0.7rem;
       }
-    }
-    .nav__call-to-action {
-      margin-left: 2rem;
+      .phone-number {
+        padding: 1.2rem 2rem;
+      }
     }
   }
 }

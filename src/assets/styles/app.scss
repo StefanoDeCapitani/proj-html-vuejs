@@ -33,8 +33,20 @@ body {
 .bg-success {
   background-color: $clr-success;
 }
-.bg-secondary {
+.bg-info--light {
+  background-color: $clr-info-light;
+}
+.bg-warning--light {
+  background-color: $clr-warning-light;
+}
+.bg-success--light {
+  background-color: $clr-success-light;
+}
+.bg-secondary--light {
   background-color: $clr-secondary-light;
+}
+.bg-dark {
+  background-color: $clr-dark;
 }
 
 .text-xxxl {
@@ -155,6 +167,12 @@ body {
 
 .row {
   @include flex(row, 0, center, center);
+  .col-4_12 {
+    width: calc(100% / 12 * 4);
+  }
+  .col-8_12 {
+    width: calc(100% / 12 * 8);
+  }
   .col-4_6 {
     width: calc(100% / 6 * 4);
   }

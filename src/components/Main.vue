@@ -13,6 +13,9 @@
     <div class="bg-secondary">
       <Blog />
     </div>
+    <div class="bg-dark">
+      <CallToAction />
+    </div>
   </main>
 </template>
 
@@ -26,6 +29,7 @@ import ClientRelationship from "./ClientRelationship.vue";
 import Awards from "./Awards.vue";
 import Testimonial from "./Testimonial.vue";
 import Blog from "./Blog.vue";
+import CallToAction from "./CallToAction.vue";
 
 export default {
   name: "Main",
@@ -39,6 +43,7 @@ export default {
     Awards,
     Testimonial,
     Blog,
+    CallToAction,
   },
 };
 </script>

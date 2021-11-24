@@ -59,13 +59,12 @@ export default {
 @import "../assets/styles/variables";
 
 .card {
-  @include flex(column, 1rem, center);
+  @include flex(column, 17px, center);
   background-color: white;
   color: grey;
   margin: auto;
   padding: 2rem;
-  width: calc(100% / 6 * 4.2);
-  transform: translateY(10%);
+  width: calc(100% / 6 * 4.8);
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   .card__profile-image {
@@ -75,13 +74,14 @@ export default {
   }
   .card__name {
     color: $text-dark;
+    padding-bottom: 10px;
   }
   .btn--call {
     color: $clr-primary;
     margin-bottom: 1rem;
   }
   .form {
-    @include flex(column, 0.8rem, center);
+    @include flex(column, 1rem, center);
     width: 100%;
     .form__input-container {
       width: 100%;
