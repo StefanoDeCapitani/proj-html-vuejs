@@ -37,12 +37,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Reset styles
 - [x] Install font "DM Sans"
 - [x] Create scss variables and mixins
-- [ ] Create rough html structure with components and subcomponents
-- [ ] Image src-set how does it work? Can I use them?
-- [ ] Assign basic styles with variables and mixins
-- [ ] Use v-for to dinamically generate parts of the markup
+- [x] Create rough html structure with components and subcomponents
+- [x] Assign basic styles with variables and mixins
+- [x] Footer v-for
+- [ ] Use v-for to dinamically generate other parts of the markup
 - [ ] Set props, events, data and eventlisteners for each component
 - [ ] Form validation
 - [ ] Adjust minor details in the styling
 - [ ] Refactor
 - [ ] Make the layout responsive
+
+- [ ] Image src-set how does it work? Can I use them?
+
+- [ ] Position fixed / sticky
+- [ ] Relationship icons hover
+- [ ] Awards hover effect

@@ -2,14 +2,25 @@ import Vue from "vue";
 import App from "./App.vue";
 import "@fontsource/dm-sans";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faSeedling } from "@fortawesome/free-solid-svg-icons";
-import { faParachuteBox } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
-import { faSearchPlus } from "@fortawesome/free-solid-svg-icons";
-import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
-import { faPoll } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhoneAlt,
+  faArrowRight,
+  faSeedling,
+  faParachuteBox,
+  faSearchPlus,
+  faPlusSquare,
+  faPoll,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+  faLinkedin,
+  faTiktok,
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faPhoneAlt,
@@ -19,7 +30,14 @@ library.add(
   faLightbulb,
   faSearchPlus,
   faPlusSquare,
-  faPoll
+  faPoll,
+  faChevronDown,
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+  faLinkedin,
+  faTiktok
 );
 
 Vue.config.productionTip = false;
