@@ -111,7 +111,7 @@ export default {
         padding: 0 0.7rem;
       }
       .phone-number {
-        padding: 1.2rem 2rem;
+        padding: 1.3rem 2rem;
       }
     }
   }

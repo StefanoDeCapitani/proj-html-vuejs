@@ -10,7 +10,7 @@
     <a class="a btn--call" href="tel:5558021234">
       <PhoneNumber>(555) 802-1234</PhoneNumber>
     </a>
-    <form class="form">
+    <form class="form" @submit.prevent="onSubmit($event)">
       <div class="form__input-container form__input-container--name">
         <input
           type="text"
@@ -51,6 +51,23 @@ export default {
   name: "FormCard",
   components: {
     PhoneNumber,
+  },
+  data() {
+    return {
+      name: "",
+      email: "",
+      phone: "",
+    };
+  },
+  methods: {
+    onSubmit(event) {
+      this.name = event.target.elements[0].value;
+      this.email = event.target.elements[1].value;
+      this.phone = event.target.elements[2].value;
+      event.target.elements[0].value = "";
+      event.target.elements[1].value = "";
+      event.target.elements[2].value = "";
+    },
   },
 };
 </script>

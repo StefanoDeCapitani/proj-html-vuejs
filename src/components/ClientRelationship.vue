@@ -43,29 +43,15 @@
       </div>
       <div class="col row">
         <div class="col-5_6 features-container">
-          <div class="features">
-            <div class="icon-container">
-              <FontAwesomeIcon icon="search-plus" />
-            </div>
+          <div class="feature" v-for="(feature, i) in features" :key="i">
+            <a class="a icon-container" href="feature.href">
+              <FontAwesomeIcon :icon="feature.icon" />
+            </a>
             <div class="section section-s">
-              <h4><a class="a" href="#">Accountability</a></h4>
-              <p>Curabitur ac leo nunc vestibulum</p>
-            </div>
-          </div>
-          <div class="features">
-            <div class="icon-container">
-              <FontAwesomeIcon icon="plus-square" />
-            </div>
-            <div class="section section-s">
-              <h4><a class="a" href="#">Transparency</a></h4>
-              <p>urabitur ac leo nunc vestibulum</p>
-            </div>
-          </div>
-          <div class="features">
-            <div class="icon-container"><FontAwesomeIcon icon="poll" /></div>
-            <div class="section section-s">
-              <h4><a class="a" href="#">Investment</a></h4>
-              <p>Curabitur ac leo nunc vestibulum</p>
+              <h4>
+                <a class="a" href="feature.href">{{ feature.title }}</a>
+              </h4>
+              <p>{{ feature.description }}</p>
             </div>
           </div>
         </div>
@@ -81,6 +67,30 @@ export default {
   name: "ClientRelationship",
   components: {
     FontAwesomeIcon,
+  },
+  data() {
+    return {
+      features: [
+        {
+          icon: "search-plus",
+          title: "Accountability",
+          description: "Curabitur ac leo nunc vestibulum",
+          href: "#",
+        },
+        {
+          icon: "plus-square",
+          title: "Transparency",
+          description: "Curabitur ac leo nunc vestibulum",
+          href: "#",
+        },
+        {
+          icon: "poll",
+          title: "Investment",
+          description: "Curabitur ac leo nunc vestibulum",
+          href: "#",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -109,7 +119,7 @@ export default {
     .features-container {
       display: grid;
       gap: 58px;
-      .features {
+      .feature {
         @include flex(row, 1.5rem, center);
         padding-left: 52px;
         .icon-container {

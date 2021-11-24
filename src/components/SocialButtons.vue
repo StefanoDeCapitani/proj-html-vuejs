@@ -24,5 +24,13 @@ export default {
 
 .social-buttons {
   @include flex(row, 1rem);
+
+  & > * {
+    cursor: pointer;
+    font-size: $fs-l;
+    &:hover {
+      color: $clr-primary;
+    }
+  }
 }
 </style>

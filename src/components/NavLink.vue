@@ -1,7 +1,11 @@
 <template>
-  <div class="nav__link" @mouseleave="showDropDown = false">
+  <div
+    class="nav__link"
+    @mouseleave="showDropDown = false"
+    @mouseenter="showDropDown = true"
+  >
     <a class="a" :href="linkHref">
-      <div class="title" @mouseenter="showDropDown = true">
+      <div class="title">
         <slot></slot>
         <span class="drop-down-arrow" v-if="dropDownMenu"
           ><FontAwesomeIcon :icon="['fas', 'chevron-down']"
@@ -9,11 +13,10 @@
       </div>
     </a>
     <div
+      v-if="dropDownMenu && showDropDown === true"
       class="drop-down-menu"
-      :class="{ show: showDropDown }"
       :style="dropDownWidth"
       ref="dropDown"
-      v-if="dropDownMenu"
     >
       <ul class="ul">
         <li class="li" v-for="(link, i) in dropDownMenu" :key="i">
@@ -98,22 +101,29 @@ export default {
   .drop-down-menu {
     position: absolute;
     border-radius: $border-radius;
-    top: 90px;
+    /*     top: 90px; */
     left: -5px;
     padding: 0.5rem 2rem;
     background-color: $clr-light;
-    opacity: 0;
+    /*     opacity: 0; */
     transition: $transition;
     box-shadow: 0px 10px 30px -8px rgb(0 0 0 / 20%);
-    &.show {
-      opacity: 1;
-      top: 65px;
+    animation: showUp 0.3s linear;
+    @keyframes showUp {
+      0% {
+        top: 90px;
+        opacity: 0;
+      }
+      100% {
+        top: 65px;
+        opacity: 1;
+      }
     }
     .ul {
       @include flex(row, 1rem, flex-start);
       width: 100%;
       .drop-down__link-icon {
-        margin: 2rem 0 0.5rem;
+        margin: 1.3rem 0 0.5rem;
         width: 40px;
         height: 40px;
         display: grid;
