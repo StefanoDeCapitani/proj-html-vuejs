@@ -43,6 +43,7 @@ export default {
     img {
       border-radius: $border-radius;
       width: 80%;
+      box-shadow: $box-shadow;
     }
   }
   .testimonial-review {

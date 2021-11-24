@@ -28,6 +28,7 @@ export default {
   & > * {
     cursor: pointer;
     font-size: $fs-l;
+    transition: $transition;
     &:hover {
       color: $clr-primary;
     }

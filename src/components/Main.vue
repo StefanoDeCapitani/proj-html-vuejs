@@ -5,12 +5,12 @@
     <Brands />
     <CallCard />
     <CaseStudies />
-    <div class="bg-secondary">
+    <div class="bg-secondary--light">
       <ClientRelationship />
       <Awards />
     </div>
     <Testimonial />
-    <div class="bg-secondary">
+    <div class="bg-secondary--light">
       <Blog />
     </div>
     <div class="bg-dark">
