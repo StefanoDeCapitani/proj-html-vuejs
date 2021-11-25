@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="classShowHeader">
     <div class="container">
       <nav class="nav">
         <img
@@ -8,7 +8,12 @@
           alt="Avada Marketing logo"
         />
         <ul class="nav__ul">
-          <li class="li nav__li" v-for="(link, i) in navLinks" :key="i">
+          <li
+            class="li nav__li"
+            v-for="(link, i) in navLinks"
+            :key="i"
+            @click="onNavLinkClick(i)"
+          >
             <NavLink
               :class="{ active: isActive(i) }"
               :dropDownMenu="link.dropDownMenu"
@@ -38,8 +43,17 @@ export default {
     NavLink,
     PhoneNumber,
   },
+  props: {
+    showHeader: String,
+  },
+  watch: {
+    showHeader: function (newValue) {
+      this.classShowHeader = newValue;
+    },
+  },
   data() {
     return {
+      classShowHeader: this.showHeader,
       navLinks: [
         {
           title: "Home",
@@ -85,6 +99,9 @@ export default {
     isActive(i) {
       return i === this.activeLink;
     },
+    onNavLinkClick(i) {
+      this.activeLink = i;
+    },
   },
 };
 </script>
@@ -92,13 +109,18 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/styles/variables";
 
-.header {
-  position: sticky;
-  z-index: 1;
+.header.show {
   top: 0;
+}
+
+.header {
+  top: -120px;
+  position: fixed;
+  z-index: 99;
   left: 0;
   width: 100%;
   background: $clr-light;
+  transition: $transition;
   .nav {
     @include flex(row, 0, center, space-between);
     padding: 1.64rem 1.41rem 1.41rem;

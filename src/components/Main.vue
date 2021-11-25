@@ -1,9 +1,11 @@
 <template>
-  <main>
+  <main class="main">
+    <div class="header-placeholder"></div>
+    <FloatingToggles />
     <Hero />
     <ThreeStepsSection />
     <Brands />
-    <CallCard />
+    <CallCard :sticky-call-card="classStickyCallCard" />
     <CaseStudies />
     <div class="bg-secondary--light">
       <ClientRelationship />
@@ -30,6 +32,7 @@ import Awards from "./Awards.vue";
 import Testimonial from "./Testimonial.vue";
 import Blog from "./Blog.vue";
 import CallToAction from "./CallToAction.vue";
+import FloatingToggles from "./FloatingToggles.vue";
 
 export default {
   name: "Main",
@@ -44,8 +47,26 @@ export default {
     Testimonial,
     Blog,
     CallToAction,
+    FloatingToggles,
+  },
+  props: {
+    stickyCallCard: String,
+  },
+  data() {
+    return {
+      classStickyCallCard: "",
+    };
+  },
+  watch: {
+    stickyCallCard: function (newValue) {
+      this.classStickyCallCard = newValue;
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header-placeholder {
+  height: 111px;
+}
+</style>

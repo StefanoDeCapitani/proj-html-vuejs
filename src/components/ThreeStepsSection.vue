@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container three-steps-section">
     <div class="row row-cols-2">
       <div class="col section-image">
         <img src="../assets/img/awareness.svg" alt="" />

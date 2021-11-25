@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="card">
+    <div class="card call-card" :class="classStickyCallCard">
       <div class="card__profile">
         <img
           class="card__profile-image"
@@ -29,6 +29,19 @@ export default {
   components: {
     PhoneNumber,
   },
+  props: {
+    stickyCallCard: String,
+  },
+  data() {
+    return {
+      classStickyCallCard: "",
+    };
+  },
+  watch: {
+    stickyCallCard: function (newValue) {
+      this.classStickyCallCard = newValue;
+    },
+  },
 };
 </script>
 
@@ -37,6 +50,7 @@ export default {
 .container {
   padding-top: $container-padding;
   padding-bottom: $container-padding;
+  min-height: 311px;
   .card {
     @include flex(row, 1rem, center, space-between);
     background-color: white;
@@ -46,6 +60,17 @@ export default {
     transform: translateY(10%);
     box-shadow: $box-shadow;
     border-radius: $border-radius;
+    max-width: 1200px;
+    opacity: 1;
+    transition: $transition;
+    &.sticky {
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      &.go-up {
+        opacity: 0;
+      }
+    }
     .card__profile {
       @include flex(row, 1.2rem, center);
       .card__professional-title {

@@ -12,6 +12,10 @@ import {
   faPlusSquare,
   faPoll,
   faChevronDown,
+  faShoppingCart,
+  faComments,
+  faTimes,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -20,6 +24,7 @@ import {
   faYoutube,
   faLinkedin,
   faTiktok,
+  faHubspot,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -32,12 +37,17 @@ library.add(
   faPlusSquare,
   faPoll,
   faChevronDown,
+  faShoppingCart,
+  faComments,
+  faTimes,
+  faPaperPlane,
   faFacebook,
   faTwitter,
   faInstagram,
   faYoutube,
   faLinkedin,
-  faTiktok
+  faTiktok,
+  faHubspot
 );
 
 Vue.config.productionTip = false;

@@ -43,7 +43,7 @@ export default {
     img {
       border-radius: $border-radius;
       width: 80%;
-      box-shadow: $box-shadow;
+      box-shadow: 16px 32px 40px -8px rgb(0 0 0 / 16%);
     }
   }
   .testimonial-review {
